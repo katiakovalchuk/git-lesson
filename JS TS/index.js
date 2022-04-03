@@ -54,3 +54,10 @@ const fmap = (a, gen) => (...args) => {
 
 const partial = (func, ...args) => (...args2) => func(...args, ...args2);
 
+
+//Наша функция partial позволяет фиксировать только первые аргументы. Усовершенствуй ее, чтобы зафиксировать можно было
+// любые аргументы, пропущенные аргументы обозначаются с помощью undefined
+
+const partialAny = (func, ...args) => (...args2) =>
+    func(...args.map(arg => arg === undefined ? args2.shift() : arg), ...args2);
+
