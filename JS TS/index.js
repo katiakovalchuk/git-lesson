@@ -48,3 +48,9 @@ const fmap = (a, gen) => (...args) => {
 
     return a(gen.apply(null, copy));
 }
+
+
+//Напиши функцию partial(fn, a1, a2, ....), которая позволяет зафиксировать один или несколько аргументов функции
+
+const partial = (func, ...args) => (...args2) => func(...args, ...args2);
+
