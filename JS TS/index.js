@@ -35,3 +35,16 @@ const map = (fn, array) => {
     return results;
 }
 
+
+//Напиши функцию fmap(a, gen), которая принимает на вход 2 функции, a и gen, где gen — функция-генератор вроде той,
+// что была в первом задании. fmap возвращает новую функцию-генератор, которая при каждом вызове берет следующее
+// значение из gen и пропускает его через функцию a
+
+const fmap = (a, gen) => (...args) => {
+    const copy = [];
+    for (const arg of args){
+        copy.push(arg);
+    }
+
+    return a(gen.apply(null, copy));
+}
