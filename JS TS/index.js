@@ -77,3 +77,18 @@ const bind = (fn, context, ...args) => (...args2) => {
 //Напиши функцию pluck, которая берет массив объектов и возвращает массив значений определенного поля
 
 const pluck = (objects, fieldName) => objects.map(obj => obj[fieldName]);
+
+
+//Напиши функцию filter(), которая принимает функцию-предикат и массив. Возвращает она массив значений,
+// для которых предикат вернет true.
+
+const filter = (arr, fn) => {
+    const filtered = [];
+    for (const el of arr){
+        if (fn(el)) {
+            filtered.push(el);
+        }
+    }
+
+    return filtered;
+}
