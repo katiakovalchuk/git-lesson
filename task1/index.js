@@ -1,6 +1,7 @@
 
 
 function calculate(equation) {
+    if(typeof equation !== 'string') return '';
     const [a, operator, b] = equation.split(' ');
     const operators = {
         '+': (a, b) => a + b,
@@ -12,3 +13,4 @@ function calculate(equation) {
 
     return ''.padStart(dotsNumber, '.');
 }
+
