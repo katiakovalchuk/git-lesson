@@ -92,3 +92,15 @@ const filter = (arr, fn) => {
 
     return filtered;
 }
+
+
+//Напиши функцию, считающую число свойств в объекте
+
+const count = obj => {
+    let count = 0;
+    for (const key in obj){
+        count++;
+    }
+
+    return count;
+}
