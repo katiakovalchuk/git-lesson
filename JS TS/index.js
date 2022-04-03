@@ -22,3 +22,16 @@ const take = (fn, count) => {
 }
 
 
+//Напиши функцию map(fn, array), которая принимает на вход функцию и массив, и обрабатывает каждый элемент массива
+// этой функцией, возвращая новый массив
+
+const map = (fn, array) => {
+    const results = [];
+    for (const el of array){
+        const result = fn(el);
+        results.push(result);
+    }
+
+    return results;
+}
+
