@@ -74,3 +74,6 @@ const bind = (fn, context, ...args) => (...args2) => {
 }
 
 
+//Напиши функцию pluck, которая берет массив объектов и возвращает массив значений определенного поля
+
+const pluck = (objects, fieldName) => objects.map(obj => obj[fieldName]);
