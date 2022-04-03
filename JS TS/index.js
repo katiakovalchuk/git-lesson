@@ -61,3 +61,16 @@ const partial = (func, ...args) => (...args2) => func(...args, ...args2);
 const partialAny = (func, ...args) => (...args2) =>
     func(...args.map(arg => arg === undefined ? args2.shift() : arg), ...args2);
 
+
+//Напиши функцию bind, которая позволяет привязать контекст (значение this) к функции
+
+const bind = (fn, context, ...args) => (...args2) => {
+    const field = Date.now().toString();
+    context[field] = fn;
+    const result = context[field](...args, ...args2);
+    delete context[field];
+
+    return result;
+}
+
+
