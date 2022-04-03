@@ -7,3 +7,18 @@
 const sequence = (start = 0, step = 1) => () => (start += step) - step;
 
 
+//Также, нужна функция take(fn, count) которая вызвает функцию fn заданное число (count) раз и возвращает массив
+// с результатами вызовов. Она нам пригодится для отладки:
+
+const take = (fn, count) => {
+    const results = [];
+    while(count > 0){
+        const result = fn();
+        results.push(result);
+        count--;
+    }
+
+    return results;
+}
+
+
